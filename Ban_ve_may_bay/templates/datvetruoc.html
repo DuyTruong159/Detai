@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đặt vé trước</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+<body class="bg-light">
+    <h1 class="text-center text-danger">TRAVELL & GO</h1>
+    <div>
+        <table class="table">
+            <h2 class="text-center bg-warning" >Phiếu đặt chỗ</h2>
+            <tr class="form-group">
+                <th style="width:10%">Chuyến bay:</th>
+                <th class="border border-left-0 text-center">{{ chuyen_bay.ma_chuyen_bay }}</th>
+                <th style="width:10%">Hành khách:</th>
+                <th style="width:40%">
+                    <input type="text" placeholder="Nhập tên..." class="border-0 w-100 text-center"/>
+                </th>
+            </tr>
+            <tr class="form-group">
+                <th>CMND:</th>
+                <th class="border border-left-0">
+                    <input type="number" placeholder="Nhập CMND..." class="border-0 w-100 text-center"/>
+                </th>
+                <th>Điện thoại:</th>
+                <th>
+                    <input type="number" placeholder="Nhập SĐT..." class="border-0 w-100 text-center"/>
+                </th>
+            </tr>
+            <tr class="border">
+                <th>Hạng vé:</th>
+                <th class="border border-left-0 text-center">
+                    <select class="border-0">
+                        <option value="hang1" name="hang1">First Class</option>
+                        <option value="hang2" name="hang2">Second Class</option>
+                    </select>
+                </th>
+                <th>Giá tiền:</th>
+                <th class="text-center">hgffg</th>
+            </tr>
+            </tr>
+        </table>
+    </div>
+    <div class="mx-3">
+        <input type="submit" value="Đặt chỗ" class="btn-success px-5 py-2 float-right" />
+    </div>
+
+</body>
+</html>

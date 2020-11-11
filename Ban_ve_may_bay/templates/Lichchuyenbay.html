@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lịch chuyến bay</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"  />
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"/>
+</head>
+<body>
+    <h1 class="text-center text-danger" >TRAVELL & GO</h1>
+    <div>
+        <h2 class="text-center bg-warning">Lịch chuyến bay</h2>
+        <table class="table">
+            <tr>
+                <th class="text-center bg-dark text-white" style="width:15%">Mã chuyến bay:</th>
+                <th colspan="3" class="text-center bg-secondary text-white">{{ chuyen_bay.ma_chuyen_bay }}</th>
+            </tr>
+            <tr>
+                <th>Sân bay đi:</th>
+                <th class="border border-left-0 text-center" style="width:35%">{{ chuyen_bay.depart }}</th>
+                <th style="width:15%">Sân ba đến:</th>
+                <th class="text-center">{{ chuyen_bay.arrive }}</th>
+            </tr>
+            <tr>
+                <th>Ngày - giờ:</th>
+                <th class="border border-left-0 text-center">{{ chuyen_bay.day_time }}</th>
+                <th>Thời gian bay:</th>
+                <th class="text-center">{{ chuyen_bay.time_flight }}</th>
+            </tr>
+            <tr>
+                <th>Số lượng ghế hạng 1:</th>
+                <th class="border border-left-0 text-center">{{ chuyen_bay.first_chair }}</th>
+                <th>Số lượng ghế hạng 2:</th>
+                <th class="text-center" >{{ chuyen_bay.second_chair }}</th>
+            </tr>
+            <tr class="text-center">
+                <th class="bg-info text-center">STT</th>
+                <th class="bg-primary">Sân bay trung gian</th>
+                <th class="bg-success">Thời gian dừng</th>
+                <th class="bg-danger">Ghi chú</th>
+            </tr>
+            <tr class="text-center">
+                <td>1</td>
+                <td>{{ chuyen_bay.transit_1 }}</td>
+                <td>{{ chuyen_bay.time_delay_1 }}</td>
+                <td></td>
+            </tr>
+            <tr class="text-center">
+                <td>2</td>
+                <td>{{ chuyen_bay.transit_2 }}</td>
+                <td>{{ chuyen_bay.time_delay_2 }}</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

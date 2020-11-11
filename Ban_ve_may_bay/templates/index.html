@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang chủ</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+<body class="bg-light">
+<h1 class="text-center text-danger">TRAVELL & GO </h1>
+<ul>
+    <li><a class="font-weight-bolder" href="{{ url_for('baocaothang') }}">Báo cáo doanh thu tháng</a></li>
+    <li><a class="font-weight-bolder" href="{{ url_for('baocaonam') }}">Báo cáo doanh thu năm</a></li>
+</ul>
+    <div>
+        <table class="table">
+            <h2 class="text-center bg-warning">Danh sách chuyến bay</h2>
+            <tr class="border">
+                <th><p>STT</p></th>
+                <th><p>Sân bay đi</p></th>
+                <th><p>Sân bay đến</p></th>
+                <th><p>Khởi hành</p></th>
+                <th><p>Thời gian</p></th>
+                <th><p>Số ghế trống</p></th>
+                <th><p>Số ghế đặt</p></th>
+                <td></td>
+                <td></td>
+            </tr>
+            {% for cb in chuyen_bay %}
+            <tr>
+                <td>{{ cb.stt }}</td>
+                <td>{{ cb.depart }}</td>
+                <td>{{ cb.arrive }}</td>
+                <td>{{ cb.day_time }}</td>
+                <td>{{ cb.time_flight }}</td>
+                <td></td>
+                <td></td>
+                <td><a href="{{ url_for('lichchuyenbay', stt = cb.stt) }}">Chi tiết</a></td>
+                <td>
+                    <button class="btn-primary" type="button"
+                            onclick="location.href='{{ url_for('vechuyenbay', stt = cb.stt) }}'">Đặt vé</button>
+                </td>
+                <td>
+                    <button class="btn-success" type="button"
+                            onclick="location.href='{{ url_for('datvetruoc', stt = cb.stt) }}'">Đặt vé trước</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
