@@ -33,12 +33,15 @@
                 <th>Hạng vé:</th>
                 <th class="border border-left-0 text-center">
                     <select class="border-0">
-                        <option value="hang1" name="hang1">First Class</option>
-                        <option value="hang2" name="hang2">Second Class</option>
+                        <option value="hang1"
+                                onclick="document.getElementById('hang1').innerHTML = '{{ chuyen_bay.price_1 }}'">First Class</option>
+                        <option value="hang2"
+                                onclick="document.getElementById('hang2').innerHTML = '{{ chuyen_bay.price_2 }}'">Second Class</option>
                     </select>
                 </th>
                 <th>Giá tiền:</th>
-                <th class="text-center">hgffg</th>
+                <th class="text-center" id="hang1"></th>
+                <th class="text-center" id="hang2"></th>
             </tr>
             </tr>
         </table>

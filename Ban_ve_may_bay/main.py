@@ -32,4 +32,4 @@ def baocaonam():
     return render_template('baocaonam.html', chuyen_bay = chuyen_bay)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=280)
+    app.run(debug=True, port=2800)
