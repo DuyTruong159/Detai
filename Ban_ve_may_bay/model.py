@@ -1,7 +1,8 @@
-from sqlalchemy import Column, Integer, Float, ForeignKey, String
+from sqlalchemy import Column, Integer, Float, ForeignKey, String, Boolean
 from sqlalchemy.orm import relationship
 from Ban_ve_may_bay import db
 from datetime import datetime
+from flask_login import UserMixin
 
 class Chuyenbay(db.Model):
     __tablename__ = "chuyenbay"
@@ -18,7 +19,7 @@ class Chuyenbay(db.Model):
     time_delay_second = Column(datetime)
 
     def __str__(self):
-        return self.Ma
+        return self.ma
 
 class Ghe(db.Model):
     __tablename__ = "ghe"
@@ -29,7 +30,7 @@ class Ghe(db.Model):
     price =  Column(Float, default=0)
 
     def __str__(self):
-        return self.Hang
+        return self.hang
 
 class Khachhang(db.Model):
     __tablename__ = "khachhanh"
@@ -43,7 +44,19 @@ class Khachhang(db.Model):
 
 
     def __str__(self):
-        return self.Ten
+        return self.ten
+
+class User(db.Model, UserMixin):
+    __tablename__ = "user"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String(50), nullable=False)
+    active = Column(Boolean, default=True)
+    username = Column(String(50), nullable=False)
+    password = Column(String(50), nullable=False)
+
+    def __str__(self):
+        return self.name
 
 if __name__ == '__main__':
     db.create_all()

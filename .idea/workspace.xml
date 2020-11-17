@@ -20,11 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81d3bb94-f3d2-4542-801f-07a58ad5d650" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Ban_ve_may_bay/templates/admin/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ban_ve_may_bay/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ban_ve_may_bay/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ban_ve_may_bay/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ban_ve_may_bay/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ban_ve_may_bay/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ban_ve_may_bay/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ban_ve_may_bay/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ban_ve_may_bay/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ban_ve_may_bay/templates/admin/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ban_ve_may_bay/templates/admin/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ban_ve_may_bay/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ban_ve_may_bay/templates/admin/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,8 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -53,7 +54,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
   </component>
-  <component name="RunManager" selected="Python.admin">
+  <component name="RunManager" selected="Python.main">
     <configuration name="admin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Detai" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -98,8 +99,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.admin" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.admin" />
       </list>
     </recent_temporary>
   </component>
@@ -127,25 +128,25 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1419" height="244" key="GridCell.Tab.0.bottom" timestamp="1605602004369">
+    <state width="1419" height="244" key="GridCell.Tab.0.bottom" timestamp="1605603688124">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1605602004369" />
+    <state width="1419" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1605603688124" />
     <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.23.1440.805@0.23.1440.805" timestamp="1605590006497" />
-    <state width="1419" height="244" key="GridCell.Tab.0.center" timestamp="1605602004368">
+    <state width="1419" height="244" key="GridCell.Tab.0.center" timestamp="1605603688119">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1605602004368" />
+    <state width="1419" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1605603688119" />
     <state width="1419" height="245" key="GridCell.Tab.0.center/0.23.1440.805@0.23.1440.805" timestamp="1605590006495" />
-    <state width="1419" height="244" key="GridCell.Tab.0.left" timestamp="1605602004367">
+    <state width="1419" height="244" key="GridCell.Tab.0.left" timestamp="1605603688118">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1605602004367" />
+    <state width="1419" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1605603688118" />
     <state width="1419" height="245" key="GridCell.Tab.0.left/0.23.1440.805@0.23.1440.805" timestamp="1605590006494" />
-    <state width="1419" height="244" key="GridCell.Tab.0.right" timestamp="1605602004369">
+    <state width="1419" height="244" key="GridCell.Tab.0.right" timestamp="1605603688121">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1605602004369" />
+    <state width="1419" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1605603688121" />
     <state width="1419" height="245" key="GridCell.Tab.0.right/0.23.1440.805@0.23.1440.805" timestamp="1605590006496" />
   </component>
 </project>
