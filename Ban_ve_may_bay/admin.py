@@ -20,6 +20,7 @@ class LogoutView(BaseView):
         return current_user.is_authenticated
 
 admin.add_view(ModelView(Chuyenbay, db.session))
+admin.add_view(ModelView(Transit, db.session))
 admin.add_view(ModelView(Ghe, db.session))
 admin.add_view(ModelView(Khachhang, db.session))
 admin.add_view(ContactView(name="Liên hệ"))

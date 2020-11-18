@@ -22,7 +22,6 @@
     <list default="true" id="81d3bb94-f3d2-4542-801f-07a58ad5d650" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ban_ve_may_bay/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ban_ve_may_bay/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ban_ve_may_bay/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ban_ve_may_bay/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ban_ve_may_bay/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ban_ve_may_bay/model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

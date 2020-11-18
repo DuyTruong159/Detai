@@ -6,24 +6,34 @@ from flask_login import UserMixin
 class Chuyenbay(db.Model):
     __tablename__ = "chuyenbay"
 
-    ma = Column(String(10), primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    ma = Column(String(10), nullable=False)
     depart = Column(String(255), nullable=False)
     arrive = Column(String(255), nullable=False)
     day_time = Column(String(100), nullable=False)
     time_flight = Column(String(100), nullable=False)
     ghe = relationship('Ghe', backref = 'ghe', lazy = True)
+    trasit = relationship('Transit', backref = 'transit', lazy = True)
+
+    def __str__(self):
+        return self.ma
+
+class Transit(db.Model):
+    __tablename__ = "transit"
+
+    id = Column(Integer, ForeignKey(Chuyenbay.id), primary_key=True)
     transit_first = Column(String(255))
     time_delay_first = Column(String(100))
     transit_second = Column(String(255))
     time_delay_second = Column(String(100))
 
     def __str__(self):
-        return self.ma
+        return self.id
 
 class Ghe(db.Model):
     __tablename__ = "ghe"
 
-    chuyenbay_ma = Column(String(10), ForeignKey(Chuyenbay.ma), primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True)
     hang = Column(Integer, primary_key=True)
     soluong = Column(Integer)
     price =  Column(Float, default=0)
