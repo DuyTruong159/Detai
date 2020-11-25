@@ -21,8 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="81d3bb94-f3d2-4542-801f-07a58ad5d650" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ban_ve_may_bay/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ban_ve_may_bay/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ban_ve_may_bay/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ban_ve_may_bay/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ban_ve_may_bay/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ban_ve_may_bay/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ban_ve_may_bay/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ban_ve_may_bay/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Ban_ve_may_bay/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ban_ve_may_bay/templates/admin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ban_ve_may_bay/templates/admin/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +54,27 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
   </component>
   <component name="RunManager" selected="Python.main">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Detai" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ban_ve_may_bay" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ban_ve_may_bay/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="admin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Detai" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -114,10 +138,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="unit" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Detai" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Ban_ve_may_bay" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Ban_ve_may_bay/unit.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
         <item itemvalue="Python.model" />
+        <item itemvalue="Python.__init__" />
+        <item itemvalue="Python.unit" />
         <item itemvalue="Python.admin" />
       </list>
     </recent_temporary>
@@ -146,25 +193,41 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1419" height="244" key="GridCell.Tab.0.bottom" timestamp="1605670327864">
+    <state width="1419" height="244" key="GridCell.Tab.0.bottom" timestamp="1606281713177">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1605670327864" />
+    <state width="1419" height="244" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1606281713177" />
     <state width="1419" height="245" key="GridCell.Tab.0.bottom/0.23.1440.805@0.23.1440.805" timestamp="1605590006497" />
-    <state width="1419" height="244" key="GridCell.Tab.0.center" timestamp="1605670327863">
+    <state width="1419" height="244" key="GridCell.Tab.0.center" timestamp="1606281713175">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1605670327863" />
+    <state width="1419" height="244" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1606281713175" />
     <state width="1419" height="245" key="GridCell.Tab.0.center/0.23.1440.805@0.23.1440.805" timestamp="1605590006495" />
-    <state width="1419" height="244" key="GridCell.Tab.0.left" timestamp="1605670327862">
+    <state width="1419" height="244" key="GridCell.Tab.0.left" timestamp="1606281713174">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1605670327862" />
+    <state width="1419" height="244" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1606281713174" />
     <state width="1419" height="245" key="GridCell.Tab.0.left/0.23.1440.805@0.23.1440.805" timestamp="1605590006494" />
-    <state width="1419" height="244" key="GridCell.Tab.0.right" timestamp="1605670327864">
+    <state width="1419" height="244" key="GridCell.Tab.0.right" timestamp="1606281713176">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1605670327863" />
+    <state width="1419" height="244" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1606281713176" />
     <state width="1419" height="245" key="GridCell.Tab.0.right/0.23.1440.805@0.23.1440.805" timestamp="1605590006496" />
+    <state width="1419" height="304" key="GridCell.Tab.1.bottom" timestamp="1606203377746">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="304" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1606203377746" />
+    <state width="1419" height="304" key="GridCell.Tab.1.center" timestamp="1606203377745">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="304" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1606203377745" />
+    <state width="1419" height="304" key="GridCell.Tab.1.left" timestamp="1606203377744">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="304" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1606203377744" />
+    <state width="1419" height="304" key="GridCell.Tab.1.right" timestamp="1606203377746">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state width="1419" height="304" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1606203377746" />
   </component>
 </project>

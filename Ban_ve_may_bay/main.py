@@ -44,8 +44,8 @@ def login_admin():
         username = request.form.get("username")
         password = request.form.get("password","")
         password = str(hashlib.md5(password.strip().encode('utf-8')).hexdigest())
-        user = User.query.fillter(User.username == username.strip(),
-                           User.password == password).first()
+        user = User.query.filter(User.username == username.strip(),
+                                 User.password == password).first()
 
         if user:
             login_user(user = user)
