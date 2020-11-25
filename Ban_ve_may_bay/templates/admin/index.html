@@ -2,7 +2,7 @@
 
 {% block body %}
     {% if current_user.is_authenticated %}
-        <h1 class="text-center text-danger">Chào mừng đến  hệ thống chuyến bay</h1>
+        <h1 class="text-center text-danger">Chào mừng đến hệ thống chuyến bay</h1>
     {% else %}
         {% include 'admin/login.html' %}
     {% endif %}

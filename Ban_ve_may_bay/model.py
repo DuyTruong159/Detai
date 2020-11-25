@@ -1,10 +1,11 @@
-from sqlalchemy import Column, Integer, Float, ForeignKey, String, Boolean
-from sqlalchemy.orm import relationship, backref
+from sqlalchemy import Column, Integer, Float, ForeignKey, String, Boolean, Enum
+from sqlalchemy.orm import relationship
 from Ban_ve_may_bay import db, admin
 from flask_login import UserMixin, logout_user, current_user
 from flask_admin import BaseView, expose
 from flask import redirect
 from flask_admin.contrib.sqla import ModelView
+from enum import Enum as UserEnum
 
 class Chuyenbay(db.Model):
     __tablename__ = "chuyenbay"

@@ -4,6 +4,9 @@ from flask_admin import Admin
 from flask_login import LoginManager
 
 app = Flask(__name__)
+
+app.secret_key="*C\x01\xc1\xc6\xb5W\xed\xccV#\xa3\xf2v%\x04"
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:phamduytruong@localhost/detaidb?charset=utf8'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
