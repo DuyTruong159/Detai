@@ -1,17 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Trang chủ</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
-</head>
-<body class="bg-light">
-<h1 class="text-center text-danger">TRAVELL & GO </h1>
-<ul>
-    <li><a class="font-weight-bolder" href="{{ url_for('baocaothang') }}">Báo cáo doanh thu tháng</a></li>
-    <li><a class="font-weight-bolder" href="{{ url_for('baocaonam') }}">Báo cáo doanh thu năm</a></li>
-</ul>
+{% extends 'base/base.html' %}
+
+{% block body %}
+    {% if not current_user.is_authenticated%}
+    <div>
+        <ul>
+            <li><a href="{{ url_for('login') }}">SignIn</a></li>
+        </ul>
+    </div>
+    {% endif %}
+    {% if current_user.is_authenticated %}
+    <ul>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+    </ul>
+    <ul>
+        <li><a class="font-weight-bolder" href="{{ url_for('baocaothang') }}">Báo cáo doanh thu tháng</a></li>
+        <li><a class="font-weight-bolder" href="{{ url_for('baocaonam') }}">Báo cáo doanh thu năm</a></li>
+    </ul>
+    {% endif %}
     <div>
         <table class="table">
             <h2 class="text-center bg-warning">Danh sách chuyến bay</h2>
@@ -28,25 +33,20 @@
             </tr>
             {% for cb in chuyen_bay %}
             <tr>
-                <td>{{ cb.stt }}</td>
+                <td>{{ cb.id }}</td>
                 <td>{{ cb.depart }}</td>
                 <td>{{ cb.arrive }}</td>
                 <td>{{ cb.day_time }}</td>
                 <td>{{ cb.time_flight }}</td>
-                <td>50</td>
+                <td>{{ cb.first_chair + cb.second_chair }}</td>
                 <td></td>
                 <td><a href="{{ url_for('lichchuyenbay', stt = cb.stt) }}">Chi tiết</a></td>
                 <td>
                     <button class="btn-primary" type="button"
-                            onclick="location.href='{{ url_for('vechuyenbay', stt = cb.stt) }}'">Đặt vé</button>
-                </td>
-                <td>
-                    <button class="btn-success" type="button"
-                            onclick="location.href='{{ url_for('datvetruoc', stt = cb.stt) }}'">Đặt vé trước</button>
+                            onclick="location.href='{{ url_for('vechuyenbay', id = cb.stt) }}'">Đặt vé</button>
                 </td>
             </tr>
             {% endfor %}
         </table>
     </div>
-</body>
-</html>
+{% endblock %}

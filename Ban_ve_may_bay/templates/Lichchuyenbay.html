@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Lịch chuyến bay</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"  />
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"/>
-</head>
-<body>
-    <h1 class="text-center text-danger" >TRAVELL & GO</h1>
+{% extends 'base/base.html' %}
+
+{% block body %}
     <div>
         <h2 class="text-center bg-warning">Lịch chuyến bay</h2>
         <table class="table">
@@ -29,9 +22,9 @@
             </tr>
             <tr>
                 <th>Số lượng ghế hạng 1:</th>
-                <th class="border border-left-0 text-center">{{ chuyen_bay.first_chair }}</th>
+                <th class="border border-left-0 text-center">10</th>
                 <th>Số lượng ghế hạng 2:</th>
-                <th class="text-center" >{{ chuyen_bay.second_chair }}</th>
+                <th class="text-center" >40</th>
             </tr>
             <tr class="text-center">
                 <th class="bg-info text-center">STT</th>
@@ -41,7 +34,7 @@
             </tr>
             <tr class="text-center">
                 <td>1</td>
-                <td>{{ chuyen_bay.transit_1 }}</td>
+                <td>{{ chuyen_bay.transit_1}}</td>
                 <td>{{ chuyen_bay.time_delay_1 }}</td>
                 <td></td>
             </tr>
@@ -53,6 +46,4 @@
             </tr>
         </table>
     </div>
-
-</body>
-</html>
+{% endblock %}

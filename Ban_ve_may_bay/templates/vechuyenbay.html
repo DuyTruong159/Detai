@@ -1,53 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Vé chuyến bay</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
-</head>
-<body>
-    <h1 class="text-center text-danger">TRAVELL & GO</h1>
-    <div>
+{% extends 'base/base.html' %}
+
+{% block body %}
+    <h2 class="text-center bg-warning" >Vé chuyến bay</h2>
+    <form method="post" action="{{ url_for('vechuyenbay', id = chuyen_bay.id)}}" enctype="multipart/form-data">
+        {% if err_msg %}
+        <div class="alert alert-danger">
+            <h2 class="text-center">{{ err_msg }}</h2>
+        </div>
+        {% endif %}
         <table class="table">
-            <h2 class="text-center bg-warning" >Vé chuyến bay</h2>
-            <tr class="form-group">
+            <tr>
                 <th style="width:10%">Chuyến bay:</th>
-                <th class="border border-left-0 text-center">{{ chuyen_bay.ma_chuyen_bay }}</th>
+                <th class="border border-left-0 text-center" style="width:40%">{{ chuyen_bay.ma }}</th>
                 <th style="width:10%">Hành khách:</th>
-                <th style="width:40%">
-                    <input type="text" placeholder="Nhập tên..." class="border-0 w-100 text-center"/>
-                </th>
-            </tr>
-            <tr class="form-group">
-                <th>CMND:</th>
-                <th class="border border-left-0">
-                    <input type="number" placeholder="Nhập CMND..." class="border-0 w-100 text-center"/>
-                </th>
-                <th>Điện thoại:</th>
                 <th>
-                    <input type="number" placeholder="Nhập SĐT..." class="border-0 w-100 text-center"/>
+                    <input type="text" placeholder="Nhập tên..." class="border-0 w-100 text-center" name="hanhkhach"/>
                 </th>
             </tr>
-            <tr class="border">
-                <th>Hạng vé:</th>
-                <th class="border border-left-0 text-center">
-                    <select class="border-0">
-                        <option value="hang1"
-                                onclick="document.getElementById('hang1').innerHTML = '{{ chuyen_bay.price_1 }}'">First Class</option>
-                        <option value="hang2"
-                                onclick="document.getElementById('hang2').innerHTML = '{{ chuyen_bay.price_2 }}'">Second Class</option>
-                    </select>
+            <tr>
+                <th class="border border-right-0">CMND:</th>
+                <th class="border border-left-0">
+                    <input type="number" placeholder="Nhập CMND..." class="border-0 w-100 text-center" name="cmnd"/>
                 </th>
-                <th>Giá tiền:</th>
-                <th class="text-center" id="hang1"></th>
-                <th class="text-center" id="hang2"></th>
+                <th class="border border-right-0">Điện thoại:</th>
+                <th class="border border-left-0">
+                    <input type="number" placeholder="Nhập SĐT..." class="border-0 w-100 text-center" name="dt"/>
+                </th>
             </tr>
+            <tr>
+                <th class="border border-right-0">Hạng vé:</th>
+                <th class="border border-left-0">
+                    <button class="btn btn-success ml-5" value="First Class" type="button"
+                            onclick="showPrice('{{ price[0].price }}')" name="hang">First Class</button>
+                    <button value="Second Class" class="btn btn-danger float-right mr-5" type="button"
+                            onclick="showPrice('{{ price[1].price }}')" name="hang">Second Class</button>
+                </th>
+                <th class="border border-right-0">Giá tiền:</th>
+                <th class="border border-left-0 text-center" id="price" name="price"></th>
             </tr>
         </table>
-    </div>
-    <div class="mx-3">
-        <input type="submit" value="Đặt vé" class="btn-primary px-5 py-2 float-right" />
-    </div>
-</body>
-</html>
+        <div class="mx-3">
+        <input class="btn-primary px-5 py-2 float-right" value="Đặt vé" type="submit"/>
+        </div>
+    </form>
+{% endblock %}
