@@ -17,6 +17,11 @@
         <li><a class="font-weight-bolder" href="{{ url_for('baocaonam') }}">Báo cáo doanh thu năm</a></li>
     </ul>
     {% endif %}
+    {% if err_msg%}
+    <div class="alert alert-danger">
+            <h2 class="text-center">{{ err_msg }}</h2>
+    </div>
+    {% endif %}
     <div>
         <table class="table">
             <h2 class="text-center bg-warning">Danh sách chuyến bay</h2>
@@ -33,18 +38,35 @@
             </tr>
             {% for cb in chuyen_bay %}
             <tr>
-                <td>{{ cb.id }}</td>
+                <td>{{ cb.stt }}</td>
                 <td>{{ cb.depart }}</td>
                 <td>{{ cb.arrive }}</td>
                 <td>{{ cb.day_time }}</td>
                 <td>{{ cb.time_flight }}</td>
                 <td>{{ cb.first_chair + cb.second_chair }}</td>
-                <td></td>
+                {% if cb.stt == 1 %}
+                <td>{{ dem_1 }}</td>
+                {% endif %}
+                {% if cb.stt == 2 %}
+                <td>{{ dem_2 }}</td>
+                {% endif %}
+                {% if cb.stt == 3 %}
+                <td>{{ dem_3 }}</td>
+                {% endif %}
+                {% if cb.stt == 4 %}
+                <td>{{ dem_4 }}</td>
+                {% endif %}
+                {% if cb.stt == 5 %}
+                <td>{{ dem_5 }}</td>
+                {% endif %}
                 <td><a href="{{ url_for('lichchuyenbay', stt = cb.stt) }}">Chi tiết</a></td>
+                {% if (cb.stt == 1 and dem_1 < 50) or (cb.stt == 2 and dem_2 < 50) or (cb.stt == 3 and dem_3 < 50)
+                    or (cb.stt == 4 and dem_4 < 50) or (cb.stt == 5 and dem_5 < 50) %}
                 <td>
                     <button class="btn-primary" type="button"
                             onclick="location.href='{{ url_for('vechuyenbay', id = cb.stt) }}'">Đặt vé</button>
                 </td>
+                {% endif %}
             </tr>
             {% endfor %}
         </table>

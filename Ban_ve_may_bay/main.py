@@ -6,8 +6,14 @@ import hashlib
 
 @app.route("/")
 def index():
+    dem_1 = unit.count_1()
+    dem_2 = unit.count_2()
+    dem_3 = unit.count_3()
+    dem_4 = unit.count_4()
+    dem_5 = unit.count_5()
     chuyen_bay = unit.read_data()
-    return render_template('index.html', chuyen_bay = chuyen_bay)
+    return render_template('index.html', chuyen_bay = chuyen_bay, dem_1=dem_1,
+                           dem_2=dem_2, dem_3=dem_3, dem_4=dem_4, dem_5=dem_5)
 
 @app.route("/lich/<int:stt>")
 def lichchuyenbay(stt):
@@ -41,7 +47,18 @@ def vechuyenbay(id):
 @app.route("/baocaothang")
 def baocaothang():
     chuyen_bay = unit.read_data()
-    return render_template('baocaothang.html', chuyen_bay = chuyen_bay)
+    dem_1 = unit.count_1()
+    dem_2 = unit.count_2()
+    dem_3 = unit.count_3()
+    dem_4 = unit.count_4()
+    dem_5 = unit.count_5()
+    dt_1 = unit.dt_1()
+    dt_2 = unit.dt_2()
+    dt_3 = unit.dt_3()
+    dt_4 = unit.dt_4()
+    dt_5 = unit.dt_5()
+    return render_template('baocaothang.html', chuyen_bay = chuyen_bay, dem_1=dem_1, dem_2=dem_2, dem_3=dem_3,
+                           dem_4=dem_4, dem_5=dem_5, dt_1=dt_1, dt_2=dt_2, dt_3=dt_3, dt_4=dt_4, dt_5=dt_5  )
 
 @app.route("/baocaonam")
 def baocaonam():

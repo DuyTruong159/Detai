@@ -7,18 +7,18 @@
             <div class="text-center bg-dark" style="font-size:25px">
                 <a class="text-white">Tháng:</a>
                 <select class="border-0 bg-dark text-white">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                    <option>11</option>
-                    <option>12</option>
+                    <option onclick="t1()">1</option>
+                    <option onclick="t2()">2</option>
+                    <option onclick="t3()">3</option>
+                    <option onclick="t4()">4</option>
+                    <option onclick="t5()">5</option>
+                    <option onclick="t6()">6</option>
+                    <option onclick="t7()">7</option>
+                    <option onclick="t8()">8</option>
+                    <option onclick="t9()">9</option>
+                    <option onclick="t10()">10</option>
+                    <option onclick="t11()">11</option>
+                    <option onclick="t12()">12</option>
                 </select>
             </div>
             <tr class="text-center">
@@ -28,13 +28,57 @@
                 <th><p>Tỷ lệ</p></th>
                 <th><p>Doanh thu</p></th>
             </tr>
+            {% for cb in chuyen_bay %}
             <tr class="text-center">
-                <td style="width:10%">1</td>
-                <td>gdfgd</td>
-                <td>gfhfgh</td>
-                <td>ghfgh</td>
-                <td>ghfgjfgj</td>
+                <td style="width:10%">{{ cb.stt }}</td>
+                <td>{{ cb.ma_chuyen_bay }}</td>
+                {% if cb.stt == 1 %}
+                <td>{{ dem_1 }}</td>
+                {% endif %}
+                {% if cb.stt == 2 %}
+                <td>{{ dem_2 }}</td>
+                {% endif %}
+                {% if cb.stt == 3 %}
+                <td>{{ dem_3 }}</td>
+                {% endif %}
+                {% if cb.stt == 4 %}
+                <td>{{ dem_4 }}</td>
+                {% endif %}
+                {% if cb.stt == 5 %}
+                <td>{{ dem_5 }}</td>
+                {% endif %}
+                {% if cb.stt == 1 %}
+                <td>{{ dem_1 * 0.2 }}%</td>
+                {% endif %}
+                {% if cb.stt == 2 %}
+                <td>{{ dem_2 * 0.2 }}%</td>
+                {% endif %}
+                {% if cb.stt == 3 %}
+                <td>{{ dem_3 * 0.2 }}%</td>
+                {% endif %}
+                {% if cb.stt == 4 %}
+                <td>{{ dem_4 * 0.2 }}%</td>
+                {% endif %}
+                {% if cb.stt == 5 %}
+                <td>{{ dem_5 * 0.2 }}%</td>
+                {% endif %}
+                {% if cb.stt == 1 %}
+                <td id="1" ></td>
+                {% endif %}
+                {% if cb.stt == 2 %}
+                <td id="2" ></td>
+                {% endif %}
+                {% if cb.stt == 3 %}
+                <td id="3" ></td>
+                {% endif %}
+                {% if cb.stt == 4 %}
+                <td id="4" ></td>
+                {% endif %}
+                {% if cb.stt == 5 %}
+                <td id="5" ></td>
+                {% endif %}
             </tr>
+            {% endfor %}
         </table>
     </div>
 {% endblock %}

@@ -34,7 +34,7 @@ class Transit(db.Model):
     time_delay = Column(String(100), nullable=False)
     chuyenbay_id = Column(Integer, ForeignKey(Chuyenbay.id), nullable=False)
 
-    def __str__(self):
+    def __int__(self):
         return self.stt
 
 
