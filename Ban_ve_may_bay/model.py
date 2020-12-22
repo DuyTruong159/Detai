@@ -7,7 +7,6 @@ from flask import redirect
 from flask_admin.contrib.sqla import ModelView
 from datetime import datetime
 
-
 class Chuyenbay(db.Model):
     __tablename__ = "chuyenbay"
 
@@ -87,6 +86,18 @@ class User(db.Model, UserMixin):
     def __str__(self):
         return self.name
 
+class Admin(db.Model, UserMixin):
+    __tablename__ = "admin"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String(50), nullable=False)
+    active = Column(Boolean, default=True)
+    username = Column(String(50), nullable=False)
+    password = Column(String(50), nullable=False)
+
+    def __str__(self):
+        return self.name
+
 class ContactView(BaseView):
     @expose('/')
     def index(self):
@@ -127,12 +138,29 @@ class VechuyenbayModelView(ModelView):
     def is_accessible(self):
         return current_user.is_authenticated
 
+class BcthangView(BaseView):
+    @expose("/")
+    def index(self):
+        return self.render('baocaothang.html')
 
-admin.add_view(ChuyenbayModelView(Chuyenbay, db.session))
+    def is_accessible(self):
+        return current_user.is_authenticated
+
+class BcnamView(BaseView):
+    @expose("/")
+    def index(self):
+        return self.render('baocaonam.html')
+
+    def is_accessible(self):
+        return current_user.is_authenticated
+
+admin.add_view(ChuyenbayModelView(Chuyenbay, db.session, name="Chuyến bay"))
 admin.add_view(TransitModelView(Transit, db.session))
-admin.add_view(GheModelView(Ghe, db.session))
-admin.add_view(KhachhangModelView(Khachhang, db.session))
-admin.add_view(VechuyenbayModelView(Vechuyenbay, db.session))
+admin.add_view(GheModelView(Ghe, db.session, name="Ghế"))
+admin.add_view(KhachhangModelView(Khachhang, db.session, name="Khách hàng"))
+admin.add_view(VechuyenbayModelView(Vechuyenbay, db.session, name="Vé chuyến bay"))
+admin.add_view(BcthangView(name="Báo cáo tháng"))
+admin.add_view(BcnamView(name="Báo cáo năm"))
 admin.add_view(ContactView(name="Liên hệ"))
 admin.add_view(LogoutView(name="Logout"))
 

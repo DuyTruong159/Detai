@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+
+{% block body %}
+{% if err_msg %}
+    <div class="alert alert-danger">
+            <h2 class="text-center">{{ err_msg }}</h2>
+    </div>
+{% endif %}
+<div class="container">
+    <form method="post" action="">
+        <div class="form-group">
+            <label>Username</label>
+            <input type="text" name="usr" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="pw" class="form-control" />
+        </div>
+        <div class="form-group float-right">
+            <input type="submit" value="login" class="btn btn-danger" />
+        </div>
+    </form>
+    <div class="form-group float-right mr-5">
+        <input type="button" value="Register"
+               onclick="location.href='{{ url_for('register') }}'" class="btn btn-danger" />
+    </div>
+</div>
+{% endblock %}

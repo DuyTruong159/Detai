@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, jsonify, session
-from Ban_ve_may_bay import app, unit, login
+from Ban_ve_may_bay import app, unit, login, decorator
 from Ban_ve_may_bay.model import *
-from flask_login import login_user
+from flask_login import login_user, login_required
 import hashlib
 
 @app.route("/")
@@ -21,6 +21,7 @@ def lichchuyenbay(stt):
     return render_template('Lichchuyenbay.html', chuyen_bay = chuyen_bay)
 
 @app.route("/datve/<int:id>", methods=['get', 'post'])
+@decorator.login_required
 def vechuyenbay(id):
     chuyen_bay = unit.datve(id = id)
     price = unit.gia(id = id)
@@ -75,17 +76,54 @@ def login_admin():
         username = request.form.get("username")
         password = request.form.get("password","")
         password = str(hashlib.md5(password.strip().encode('utf-8')).hexdigest())
+        admin = Admin.query.filter(Admin.username == username.strip(),
+                                   Admin.password == password).first()
+
+        if admin:
+            login_user(user=admin)
+
+        return redirect("/admin")
+
+@app.route("/login", methods=['post', 'get'])
+def login():
+    if request.method == 'POST':
+        username = request.form.get("usr")
+        password = request.form.get("pw", "")
+        password = str(hashlib.md5(password.strip().encode('utf-8')).hexdigest())
         user = User.query.filter(User.username == username.strip(),
                                  User.password == password).first()
 
         if user:
-            login_user(user = user)
+            login_user(user=user)
 
-    return redirect("/")
+        return redirect("/")
 
-@app.route("/login")
-def login():
-    return redirect("/admin")
+    return render_template('login.html')
+
+@app.route("/register", methods=['post', 'get'])
+def register():
+    err_msg = ""
+    if request.method == 'POST':
+        name = request.form.get("ten")
+        username = request.form.get("usr")
+        password = request.form.get("pw","")
+        password_confirm = request.form.get("pw_confirm","")
+
+        if User.query.filter(User.username == str(username)).first():
+            err_msg = "Có người sử dụng"
+        elif password != password_confirm:
+            err_msg = "Mật khẩu nhập không trùng"
+        elif password == password_confirm:
+            unit.add_user(ten=name, username=username, password=password)
+            password = str(hashlib.md5(password.strip().encode('utf-8')).hexdigest())
+            user = User.query.filter(User.username == username.strip(),
+                                     User.password == password).first()
+            if user:
+                login_user(user=user)
+
+            return redirect("/")
+
+    return render_template('register.html', err_msg=err_msg)
 
 @app.route("/logout")
 def logout():
@@ -93,4 +131,4 @@ def logout():
     return redirect("/")
 
 if __name__ == "__main__":
-    app.run(debug=True, port=7430)
+    app.run(debug=True, port=3938)

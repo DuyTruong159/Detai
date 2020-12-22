@@ -1,6 +1,7 @@
 import json, pymysql
 from Ban_ve_may_bay.model import *
 from Ban_ve_may_bay import db
+import hashlib
 
 def read_data(path= 'data/chuyen_bay.json'):
     with open(path, encoding='utf-8') as f:
@@ -16,7 +17,7 @@ def datve(id):
     return Chuyenbay.query.get(id)
 
 def gia(id):
-    return Ghe.query.filter(Ghe.chuyenbay_id == id )
+    return Ghe.query.filter(Ghe.chuyenbay_id == id)
 
 def add_ve(chuyenbay = None, hanhkhach = None, cmnd = None, sdt = None, hangve = None, giatien = None):
     hk = Khachhang(ten=hanhkhach,
@@ -132,3 +133,11 @@ def dt_4():
 def dt_5():
     vcb = sum(Vechuyenbay.query.join(Chuyenbay, Vechuyenbay.chuyenbay_id == 5).filter(Vechuyenbay.gia))
     return vcb
+
+def add_user(ten=None, username=None, password=None):
+    password = str(hashlib.md5(password.strip().encode('utf-8')).hexdigest())
+
+    u = User(name=ten, username=username, password=password)
+
+    db.session.add(u)
+    db.session.commit()

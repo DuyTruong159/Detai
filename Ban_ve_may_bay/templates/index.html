@@ -10,11 +10,10 @@
     {% endif %}
     {% if current_user.is_authenticated %}
     <ul>
-        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        <h5 class="text-success">Xin chào {{ current_user.name }}</h5>
     </ul>
     <ul>
-        <li><a class="font-weight-bolder" href="{{ url_for('baocaothang') }}">Báo cáo doanh thu tháng</a></li>
-        <li><a class="font-weight-bolder" href="{{ url_for('baocaonam') }}">Báo cáo doanh thu năm</a></li>
+        <li><a href="{{ url_for('logout') }}">Logout</a></li>
     </ul>
     {% endif %}
     {% if err_msg%}
